@@ -21,10 +21,10 @@ git clone https://github.com/TheVexatious/nice-commit.git
 
 #### Tag
  If you run nice-commit with the tag option, you will want to select the tag option and add a few tags like this:  
-  ![image1](http://image.prntscr.com/image/79606bb7b7e148479d6e19e753a6b9f2.png)  
+  ![image1](http://i.imgur.com/pPAlYqp.png)  
 
    and continue on initializing, when you run `nice-commit`, it will give you this:  
-	![image2](http://image.prntscr.com/image/03457f300b1644da98876a8e7e480347.png)  
+	![image2](http://i.imgur.com/l9Y7IC6.png)  
 	in which "Tag 1" and "Tag 2" are tags that would be specified by you, When you select one of them, for example you select "Tag 1", after enter your commit message and optional description, your commit would be like this:  
    > [Tag 1] Commit Message
    >
@@ -33,11 +33,11 @@ git clone https://github.com/TheVexatious/nice-commit.git
 
 #### Emoji  
   If you want to use the emoji method, you would first select the emoji option, and add the tags as shown:
-    ![image3](http://image.prntscr.com/image/3ddd78e48f8c435fa73aada601e213ee.png)  
+    ![image3](http://i.imgur.com/ECeKNG6.png)  
 	as you see, it's not quite like the tag method, you will need to write with the following syntax: `:[emojiName]: = tag` where `emojiName` would be any [emoji](http://www.webpagefx.com/tools/emoji-cheat-sheet/) that you would like, and `tag` will
 
    after you finish initializing then, when you run `nice-commit` you should get something like this:
-    ![image4](http://image.prntscr.com/image/fc95b6ce8b0d411e85e16c65a00264e8.png)  
+    ![image4](http://i.imgur.com/WCvvEtF.png)  
     from here, it's pretty apparent what will happen when you hit either of these, so for an example if you select "Update", after you enter your commit message and optional description, your commit would be like this:
    > [:star:] Commit Message
    >
