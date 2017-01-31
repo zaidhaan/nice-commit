@@ -9,10 +9,10 @@ git clone https://github.com/TheVexatious/nice-commit.git
 ```
 2. Run `npm install` to install all the packages
 3. Run `npm link` to globally install the CLI
-4. Run `nice-commit --init`, Then it's all up to your preferences, Look at [initialization](#Initalization) for some info on how to initialize it
+4. Run `nice-commit --init`, Then it's all up to your preferences, Look at [initialization](#initalization) for some info on how to initialize it
 
 ###  Initialization
-1. First it will ask you to pick a "[tag](#Tag)" or "[emoji](#Emoji)", pick whichever one you like.
+1. First it will ask you to pick a "[tag](#tag)" or "[emoji](#emoji)", pick whichever one you like.
 2. It wil ask you to enter the tag/emoji, Enter as many as you like and when you're done, type "fin".
 3. It will ask you whether you want commit descriptions, answer either "y" or "n"
 4. If you answered yes on the previous question, it will ask you if it is required on every commit, if you answer yes, every time you commit, when it asks for a description you **must** write a description, if you answer no, then you can write a description if you want and just skip it by pressing enter, if you like.
