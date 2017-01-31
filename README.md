@@ -9,7 +9,7 @@ git clone https://github.com/TheVexatious/nice-commit.git
 ```
 2. Go into that directory ( `cd nice-commit` ) and run `npm install` to install all the packages
 3. Run `npm link` to globally install the CLI
-4. Run `nice-commit --init`, Then it's all up to your preferences, Look at [initialization](#initalization) for some info on how to initialize it
+4. Run `nice-commit --init`, Then it's all up to your preferences, Look at [initialization](#initialization) for some info on how to initialize it
 
 ###  Initialization
 1. First it will ask you to pick a "[tag](#tag)" or "[emoji](#emoji)", pick whichever one you like.
