@@ -7,7 +7,7 @@ With Simple-Commit, you can commit in a more organized looking way!
 ```
 git clone https://github.com/TheVexatious/nice-commit.git
 ```
-2. Run `npm install` to install all the packages
+2. Go into that directory ( `cd nice-commit` ) and run `npm install` to install all the packages
 3. Run `npm link` to globally install the CLI
 4. Run `nice-commit --init`, Then it's all up to your preferences, Look at [initialization](#initalization) for some info on how to initialize it
 
