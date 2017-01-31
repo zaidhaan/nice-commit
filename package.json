@@ -1,0 +1,35 @@
+{
+  "name": "nice-commit",
+  "version": "1.0.0",
+  "description": "A simple CLI to make your git commits more look more organized",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheVexatious/nice-commit.git"
+  },
+  "keywords": [
+      "git",
+      "cli",
+      "github",
+      "commit"
+  ],
+  "author": "'Vex' <'zaidhanhussain@gmail.com'>",
+  "license": "MIT",
+  "bugs": {
+      "url": "https://github.com/TheVexatious/nice-commit/issues"
+  },
+  "homepage": "https://github.com/TheVexatious/nice-commit#readme",
+  "dependencies": {
+    "chalk": "^1.1.3",
+    "clear": "0.0.1",
+    "inquirer": "^3.0.1",
+    "minimist": "^1.2.0",
+    "shelljs": "^0.7.6"
+  },
+  "bin": {
+    "nice-commit": "index.js"
+  }
+}
