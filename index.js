@@ -183,7 +183,7 @@ function promptTag(n){
         message: `Enter Tag #${n}${n == 1 ? " (type \"fin\" to finish)" : ""}`,
         validate: function (v) {
           if (v.toLowerCase() === "fin") {
-            return true;
+            return data.tags.length === 0 ? "Please specify atleast one emoji!" : true;
           }
           if (/^[a-z0-9 ]+$/i.test(v) == false) {
             return "Your tag can only include letters and numbers";
@@ -204,7 +204,7 @@ function promptEmoji(n){
         message: `Enter Emoji #${n}${n == 1 ? " (type \"fin\" to finish)" : ""}`,
         validate: function (v) {
           if (v.toLowerCase() === "fin") {
-            return true;
+            return Object.keys(data.emojis).length === 0 ? "Please specify atleast one emoji!" : true;
           }
           if (v.split("=").length !== 2) {
             return "Please use the syntax: '[emoji] = [emojiTag]' example: ':star: = Update'";
