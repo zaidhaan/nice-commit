@@ -7,12 +7,13 @@ const inquirer = require("inquirer");
 const fs = require("fs");
 const clear = require("clear");
 const argv = require("minimist")(process.argv.slice(2));
+const { join } = require("path");
 
 let data = {};
 
 if (process.argv.slice(2).length == 0) {
-  if (fs.existsSync("config.json")) {
-    let config = JSON.parse(fs.readFileSync("./config.json"));
+  if (fs.existsSync(join(__dirname, "config.json"))) {
+    let config = JSON.parse(fs.readFileSync(join(__dirname, "config.json")));
     let tag = "";
     let cmsg = "";
     let desc = "";
@@ -128,9 +129,11 @@ if (argv._.includes("init") || argv._.includes("i") || argv.i || argv.init) {
                     confirmRequired().then((answers) => {
                       data.descRequired = answers.rq;
                       writeConfig();
+                      console.log(chalk.green("Done initializing! config has been saved in ") + chalk.cyan(join(__dirname, "config.json")));
                     });
                   } else {
                     writeConfig();
+                    console.log(chalk.green("Done initializing! config has been saved in ") + chalk.cyan(join(__dirname, "config.json")));
                   }
                 });
               } else {
@@ -154,12 +157,12 @@ if (argv._.includes("init") || argv._.includes("i") || argv.i || argv.init) {
                     confirmRequired().then((answers) => {
                       data.descRequired = answers.rq;
                       writeConfig();
-                      console.log(chalk.green("Done initializing! config has been saved in 'config.json'"));
+                      console.log(chalk.green("Done initializing! config has been saved in ") + chalk.cyan(join(__dirname, "config.json")));
                     });
                   } else {
                     data.descRequired = answers.rq;
                     writeConfig();
-                    console.log(chalk.green("Done initializing! config has been saved in 'config.json'"));
+                    console.log(chalk.green("Done initializing! config has been saved in ") + chalk.cyan(join(__dirname, "config.json")));
                   }
                 });
               } else {
@@ -182,6 +185,9 @@ function promptTag(n){
         name: "tagname",
         message: `Enter Tag #${n}${n == 1 ? " (type \"fin\" to finish)" : ""}`,
         validate: function (v) {
+          if (data.tags.includes(v)) {
+            return `Tag "${v}" aleready exists!`;
+          }
           if (v.toLowerCase() === "fin") {
             return data.tags.length === 0 ? "Please specify atleast one emoji!" : true;
           }
@@ -241,7 +247,7 @@ function confirmRequired() {
 
 function writeConfig() {
   new Promise((resolve, reject) => {
-    fs.writeFile("./config.json", JSON.stringify(data), (err) => {
+    fs.writeFile(join(__dirname, "config.json"), JSON.stringify(data), (err) => {
       if (err) {
         reject(err);
       } else {
