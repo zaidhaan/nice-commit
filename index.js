@@ -55,10 +55,7 @@ if (process.argv.slice(2).length == 0) {
         }
       });
     } else {
-      emojis = [];
-      for (const e in config.emojis) {
-	      emojis.push(config.emojis[e]);
-      }
+      emojis = Object.keys(config.emojis);
       inquirer.prompt([
         {
           type: "list",
@@ -72,11 +69,7 @@ if (process.argv.slice(2).length == 0) {
           message: "Enter your commit message"
         }
       ]).then((answers) => {
-        for (const e in config.emojis) {
-  	      if (config.emojis[e] === answers.ej) {
-            tag = e;
-          }
-        }
+        tag = config.emojis[answers.ej];
         cmsg = answers.cmsg;
         if (config.needsDesc == true) {
           inquirer.prompt([{
@@ -166,7 +159,7 @@ if (argv._.includes("init") || argv._.includes("i") || argv.i || argv.init) {
                   }
                 });
               } else {
-                data.emojis[answers.etagname.split("=")[0].trim()] = answers.etagname.split("=")[1].trim();
+                data.emojis[answers.etagname.split("=")[1].trim()] = answers.etagname.split("=")[0].trim();
                 n++;
                 f2();
               }
@@ -211,6 +204,9 @@ function promptEmoji(n){
         validate: function (v) {
           if (v.toLowerCase() === "fin") {
             return Object.keys(data.emojis).length === 0 ? "Please specify atleast one emoji!" : true;
+          }
+          if (Object.keys(data.emojis).includes(v.split("=")[1].trim())) {
+            return `Emoji Tag "${v.split("=")[1].trim()}" aleready exists!`;
           }
           if (v.split("=").length !== 2) {
             return "Please use the syntax: '[emoji] = [emojiTag]' example: ':star: = Update'";
